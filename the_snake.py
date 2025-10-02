@@ -34,7 +34,7 @@ SPEED = 20
 screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
 
 # Заголовок окна игрового поля:
-pg.display.set_caption("Змейка")
+pg.display.set_caption('Змейка')
 
 # Настройка времени:
 clock = pg.time.Clock()
@@ -59,7 +59,11 @@ class GameObject:
 class Apple(GameObject):
     """Отвечает за создание координат яблока и его отображения."""
 
-    def __init__(self, body_color=APPLE_COLOR, occupied_positions=(CENTER_POSITION,)):
+    def __init__(
+        self,
+        body_color=APPLE_COLOR,
+        occupied_positions=(CENTER_POSITION,)
+    ):
         """Инициализирует цвет яблока и его рандомную позицию."""
         super().__init__(body_color=body_color)
         self.randomize_position(occupied_positions)
@@ -192,5 +196,5 @@ def main():
         pg.display.update()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
