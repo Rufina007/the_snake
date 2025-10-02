@@ -1,6 +1,5 @@
 from random import choice, randint
 
-
 import pygame as pg
 
 # Константы для размеров поля и сетки:
@@ -53,7 +52,7 @@ class GameObject:
 
     def draw(self):
         """Mетод для отрисовки объекта."""
-        raise NotImplementedError("Будет использоваться в дочерних классах.")
+        raise NotImplementedError('Будет использоваться в дочерних классах.')
 
 
 class Apple(GameObject):
@@ -106,8 +105,9 @@ class Snake(GameObject):
 
     def move(self):
         """
-        Обновляет позицию змейки, добавляя новую голову в начало списка
-        positions и удаляя последний элемент, если длина змейки не увеличилась.
+        Обновляет позицию змейки, добавляя новую голову в начало
+        списка positions и удаляя последний элемент,если длина
+        змейки не увеличилась.
         """
         x, y = self.direction
         head_x, head_y = self.get_head_position()
@@ -137,7 +137,7 @@ class Snake(GameObject):
         позиция - центр, направление - рандомное.
         """
         self.length = 1
-        self.positions = [self.positions]
+        self.positions = [self.position]
         self.direction = choice([UP, DOWN, LEFT, RIGHT])
         self.next_direction = None
 
@@ -164,8 +164,8 @@ def handle_keys(game_object):
 
 def main():
     """
-    Основной цикл игры: инициализация, создание объектов, обработка событий,
-    обновление игры и отрисовка.
+    Основной цикл игры: инициализация, создание объектов,
+    обработка событий, обновление игры и отрисовка.
     """
     # Инициализация PyGame:
     pg.init()
@@ -198,3 +198,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
