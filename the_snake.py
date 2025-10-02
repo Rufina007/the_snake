@@ -1,5 +1,6 @@
 from random import choice, randint
 
+
 import pygame as pg
 
 # Константы для размеров поля и сетки:
@@ -33,12 +34,13 @@ SPEED = 20
 screen = pg.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
 
 # Заголовок окна игрового поля:
-pg.display.set_caption('Змейка')
+pg.display.set_caption("Змейка")
 
 # Настройка времени:
 clock = pg.time.Clock()
 
 CENTER_POSITION = (SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2)
+
 
 class GameObject:
     """Основной класс, который содержит позицию и цвет объекта."""
@@ -51,17 +53,13 @@ class GameObject:
 
     def draw(self):
         """Mетод для отрисовки объекта."""
-        raise NotImplementedError('Будет использоваться в дочерних классах.')
+        raise NotImplementedError("Будет использоваться в дочерних классах.")
 
 
 class Apple(GameObject):
     """Отвечает за создание координат яблока и его отображения."""
 
-    def __init__(
-        self,
-        body_color=APPLE_COLOR,
-        occupied_positions=(CENTER_POSITION,)
-    ):
+    def __init__(self, body_color=APPLE_COLOR, occupied_positions=(CENTER_POSITION,)):
         """Инициализирует цвет яблока и его рандомную позицию."""
         super().__init__(body_color=body_color)
         self.randomize_position(occupied_positions)
@@ -194,5 +192,5 @@ def main():
         pg.display.update()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
