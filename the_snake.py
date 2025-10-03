@@ -44,10 +44,10 @@ CENTER_POSITION = (SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2)
 class GameObject:
     """Основной класс, который содержит позицию и цвет объекта."""
 
-    def __init__(self, body_color=None) -> None:
+    def __init__(self, body_color=None, border_color=BORDER_COLOR) -> None:
         """Инициализация позиции объекта в центре экрана  и его цвета."""
         self.body_color = body_color
-        self.border_color = BORDER_COLOR
+        self.border_color = border_color
         self.position = CENTER_POSITION
 
     def draw(self):
